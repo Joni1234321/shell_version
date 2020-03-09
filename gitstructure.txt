@@ -1,1 +1,13 @@
 https://nvie.com/posts/a-successful-git-branching-model/
+
+Master:
+Website live
+
+Feature:
+When a new function is implemented
+
+Patch:
+When a change is added to a feature
+
+Hotfix:
+When a change is added to the master directly
