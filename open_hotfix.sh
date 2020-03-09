@@ -2,7 +2,14 @@
 sh version_iteration.sh 3
 
 version=`cat version.txt`
-git checkout -b $1 develop
+branchname=$1
+
+if [$1 == ""]
+then 
+	branchname="v$version"
+fi 
+
+git checkout -b $branchname develop
 git add version.txt
 git commit -m "Bumped version to $version"
 
