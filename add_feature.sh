@@ -1,2 +1,5 @@
-sh version_iteration.sh 1
-git status
+# Close branch and merge with develop 
+git checkout develop
+git merge --no-ff $1
+git branch -d $1
+git push -u origin develop
