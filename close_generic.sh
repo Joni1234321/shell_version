@@ -15,14 +15,11 @@ fi
 IFS=';' read -ra my_array <<< "$branchmerg"
 
 # Git
-for merge in "${branchmerg[@]}"; do
-	git checkout $branchmerg || exit 1
+for merge in "${my_array[@]}"; do
+	git checkout $merge || exit 1
 	git merge --no-ff $branchname
 	git tag -a $version -m "$merge version: $version"
-	git push -u origin $branchmerg
+	git push -u origin $merge
 done 
 
 git branch -d $branchname
-
-branchtype=`git rev-parse --abbrev-ref HEAD`
-branchtype=${branchtype##refs/heads/}
