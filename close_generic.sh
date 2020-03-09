@@ -16,7 +16,7 @@ IFS=';' read -ra my_array <<< "$branchmerg"
 
 # Git
 for merge in "${branchmerg[@]}"; do
-	git checkout $branchmerg
+	git checkout $branchmerg || exit 1
 	git merge --no-ff $branchname
 	git tag -a $version -m "$merge version: $version"
 	git push -u origin $branchmerg
