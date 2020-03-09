@@ -1,1 +1,1 @@
-sh version_iteration.sh 2
+sh close_generic.sh
