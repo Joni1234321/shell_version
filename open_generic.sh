@@ -1,7 +1,8 @@
-version=`cat version.txt`
 branchtype_number=$1
 branchcopy=$2 
 branchname=$3
+
+version=`sh get_nextversion.sh $branchtype_number`
 
 # Branchtype
 branchtype=$(sh get_branchtype.sh $branchtype_number)
@@ -15,7 +16,7 @@ fi
 branchname="$branchtype-$branchname"
 
 # Git 
-#exit if checkout failed
+#exit if checkout failed when cant copy
 git checkout -b $branchname $branchcopy || exit 1
 
 # Update version

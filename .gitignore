@@ -1,2 +1,2 @@
 # Dont add txt files
-version.txt
+*.txt
