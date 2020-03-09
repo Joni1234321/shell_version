@@ -4,7 +4,7 @@ branchcopy=$2
 branchname=$3
 
 # Branchtype
-branchtype=$(sh get_branchtype.sh $branchtype)
+branchtype=$(sh get_branchtype.sh $branchtype_number)
 # Branchname
 if [[ -z "$branchname" ]]; 
 then 
