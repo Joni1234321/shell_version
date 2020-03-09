@@ -1,10 +1,10 @@
 version=`cat version.txt`
-branchtype=$1
+branchtype_number=$1
 branchcopy=$2 
 branchname=$3
 
 # Branchtype
-branchtype=$(sh get_branchtype.sh $branchtype)
+branchtype=$(sh get_branchtype.sh $branchtype_number)
 # Branchname
 if [[ -z "$branchname" ]]; 
 then 
@@ -19,6 +19,6 @@ branchname="$branchtype-$branchname"
 git checkout -b $branchname $branchcopy || exit 1
 
 # Update version
-sh version_iteration.sh $1
+sh version_iteration.sh $branchtype_number
 git add version.txt
 git commit -m "Bumped version to $version"
