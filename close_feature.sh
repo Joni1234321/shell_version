@@ -2,7 +2,7 @@
 version=`cat version.txt`
 
 branchname=$1
-if [$1 == ""]
+if [[ -z "$branchname" ]]; 
 then 
 	branchname=`git rev-parse --abbrev-ref HEAD`
 	branchname=${branchname##refs/heads/}
