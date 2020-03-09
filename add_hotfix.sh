@@ -1,1 +1,0 @@
-sh version_iteration.sh 3
