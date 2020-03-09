@@ -1,1 +1,0 @@
-sh close_generic.sh
