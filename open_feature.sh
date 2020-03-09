@@ -6,7 +6,7 @@ branchname=$1
 
 if [$1 == ""]
 then 
-	branchname=$version
+	branchname="v$version"
 fi 
 
 git checkout -b $branchname develop
