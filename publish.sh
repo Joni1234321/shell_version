@@ -7,7 +7,6 @@ git merge --no-ff develop
 
 
 # Commit and tag version
-sh version_iteration.sh 0 
 version=`cat version.txt`
 
 git add version.txt
