@@ -18,7 +18,9 @@ IFS=';' read -ra my_array <<< "$branchmerg"
 for merge in "${my_array[@]}"; do
 	git checkout $merge || exit 1
 	git merge --no-ff $branchname
-	git tag -a $version -m "$merge version: $version"
+	if [[ "$merge" == "master" ]]; then
+		git tag -a $version -m "$merge version: $version"
+	fi
 	git push -u origin $merge
 done 
 
